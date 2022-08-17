@@ -35,3 +35,18 @@ button {
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
 }
+
+
+
+.highPriority {
+  font-weight: bold;
+  color: red;
+}
+.mediumPriority {
+  font-weight: bold;
+  color: yellow;
+}
+.lowPriority {
+  font-weight: bold;
+  color: green;
+}
