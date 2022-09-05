@@ -8,6 +8,7 @@ const input = document.querySelector('#new-task-description')
 const submit = document.querySelector('input[type ="submit"]')
 const result = document.querySelector('#tasks')
 const total = document.querySelector('#total')
+let i = 0
 
 submit.addEventListener('click', () => {
   if (input.value === '') return
@@ -16,6 +17,9 @@ submit.addEventListener('click', () => {
 })
 
 function createDeleteElements(value) {
+  
+  i++
+  
   const li = document.createElement('li')
   result.appendChild(li)
   li.textContent = value
@@ -25,11 +29,17 @@ function createDeleteElements(value) {
   li.appendChild(deleteBtn)
   deleteBtn.addEventListener('click', () => {
     result.removeChild(li)
+
+    i--
+    total.textContent = i
+
   })
 
   li.addEventListener('click', () => {
     li.style.color = 'red'
   })
+
+  total.textContent = i
 
 }
 
